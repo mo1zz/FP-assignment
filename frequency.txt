@@ -1,0 +1,54 @@
+This file contains a list of words from the input text sorted by frequency.
+Words are listed in descending order of frequency.
+Words with the same frequency are sorted alphabetically.
+Format: word frequency
+
+the 6
+is 4
+words 4
+and 3
+be 2
+dog 2
+file 2
+fox 2
+it 2
+lazy 2
+like 2
+multiple 2
+quick 2
+some 2
+this 2
+with 2
+also 1
+an 1
+apostrophes 1
+appear 1
+assignment 1
+brown 1
+but 1
+case 1
+cases 1
+contains 1
+demonstrates 1
+different 1
+example 1
+for 1
+hyphenated-words 1
+ignored 1
+includes 1
+jumps 1
+lines 1
+lowercase 1
+marks 1
+mixed 1
+numbers 1
+over 1
+punctuation 1
+should 1
+shouldn't 1
+split 1
+text 1
+times 1
+uppercase 1
+various 1
+will 1

@@ -1,0 +1,10 @@
+The quick brown fox jumps over the lazy dog.
+This is an example text file for the assignment.
+It contains multiple lines with various words.
+Some words, like "the" and "is", will appear multiple times.
+The fox is quick, but the dog is lazy.
+This file demonstrates different cases:
+UPPERCASE, lowercase, and Mixed Case words.
+It also includes some punctuation marks!
+Numbers like 123 should be ignored.
+Hyphenated-words and words with apostrophes shouldn't be split.

@@ -1,0 +1,53 @@
+This file contains an alphabetical list of words from the input text.
+Each line shows a word followed by the line numbers where it appears.
+Format: word line_number1, line_number2, ...
+
+also 8
+an 2
+and 4, 7, 10
+apostrophes 10
+appear 4
+assignment 2
+be 9, 10
+brown 1
+but 5
+case 7
+cases 6
+contains 3
+demonstrates 6
+different 6
+dog 1, 5
+example 2
+file 2, 6
+for 2
+fox 1, 5
+hyphenated-words 10
+ignored 9
+includes 8
+is 2, 4, 5, 5
+it 3, 8
+jumps 1
+lazy 1, 5
+like 4, 9
+lines 3
+lowercase 7
+marks 8
+mixed 7
+multiple 3, 4
+numbers 9
+over 1
+punctuation 8
+quick 1, 5
+should 9
+shouldn't 10
+some 4, 8
+split 10
+text 2
+the 1, 1, 2, 4, 5, 5
+this 2, 6
+times 4
+uppercase 7
+various 3
+will 4
+with 3, 10
+words 3, 4, 7, 10
