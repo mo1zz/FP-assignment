@@ -1,5 +1,5 @@
 import Data.Char (isAlpha, toLower)
-import Data.List (group, sort, intercalate)
+import Data.List (group, sort, intercalate, nub)
 import qualified Data.Map as Map
 import System.IO (readFile, writeFile)
 import Control.Exception (try, IOException)
@@ -18,7 +18,7 @@ processText lines = (indexMap, freqMap)
   where
     -- Create a list of (lineNumber, word) pairs
     wordsWithLines = concatMap (\(lineNum, line) -> 
-                                  zip (repeat lineNum) (map normalizeWord $ splitWords line)) 
+                                  zip (repeat lineNum) (map normalizeWord . nub $ splitWords line)) 
                                (zip [1..] lines)
     
     -- Create index map: word -> list of line numbers
@@ -60,7 +60,7 @@ formatFreqMap freqMap = unlines $
 main :: IO ()
 main = do
     -- Read input file with error handling
-    inputResult <- try (readFile "/Users/moiz/Desktop/FP-assignment/example.txt") :: IO (Either IOException String)
+    inputResult <- try (readFile "/Users/moiz/Desktop/FP-assignment/input.txt") :: IO (Either IOException String)
     case inputResult of
         Left err -> putStrLn $ "Error reading input file: " ++ show err
         Right content -> do
@@ -68,16 +68,13 @@ main = do
                 (indexMap, freqMap) = processText linesOfText
                 indexOutput = formatIndexMap indexMap
                 freqOutput = formatFreqMap freqMap
-            -- Define the output paths
-            let indexPath = "/Users/moiz/Desktop/FP-assignment/index.txt"
-            let freqPath = "/Users/moiz/Desktop/FP-assignment/frequency.txt"
             -- Write index.txt with error handling
-            indexResult <- try (writeFile indexPath indexOutput) :: IO (Either IOException ())
+            indexResult <- try (writeFile "index.txt" indexOutput) :: IO (Either IOException ())
             case indexResult of
                 Left err -> putStrLn $ "Error writing index.txt: " ++ show err
                 Right _ -> putStrLn "Successfully wrote index.txt"
             -- Write frequency.txt with error handling
-            freqResult <- try (writeFile freqPath freqOutput) :: IO (Either IOException ())
+            freqResult <- try (writeFile "frequency.txt" freqOutput) :: IO (Either IOException ())
             case freqResult of
                 Left err -> putStrLn $ "Error writing frequency.txt: " ++ show err
                 Right _ -> putStrLn "Successfully wrote frequency.txt"
