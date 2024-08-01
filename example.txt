@@ -1,21 +1,27 @@
-The quick brown fox jumps over the lazy dog. This sentence, known for its pangram status, contains every letter of the English alphabet. But let's expand on this idea with a more complex text.
+Intro to AI report
 
-In 1956, a groundbreaking experiment in artificial intelligence took place. The Dartmouth Summer Research Project on Artificial Intelligence marked the birth of AI as a field. Since then, AI has evolved tremendously, influencing various sectors including healthcare, finance, and transportation.
+I started my work by importing libraries and cleaning data. I got the data cleaned first but wasn’t able to get a file from the output of the data. Now I am trying to get an output of the data as a new file but its giving me an attribute error. I was getting an attribute error as I was using an old method of get_feature_names() that was giving an attribute error. I am getting another error of my cleaned data being messed up such as deleting row and column names.it was solved by removing the normalization and encoding steps to preserve the original data format. Kept the missing value imputation, duplicate removal, and outlier handling. Now I am starting to make my first machine learning model named logistic regression. I am visualizing data such that the data is easier to understand and learn about even to the human eye. Such as classifying the dataset with multiple factors adding to the heart attacks.
+I performed data analysis and compared the raw data with the cleaned data including their structure, missing values, statistics etc. I made my logistic regression model in a 80%-20% train to test split which is a common yet effective way to test and train the model and it is giving me good results and then I tested if the results are underfitting or overfitting but the results were balanced and well fitted. A confusion matrix was made to show the performance of the classification. Now I am working on my model to take test inputs and give chance of heart attack% as an output.
+I was making a random forest model I have used a oversampling and under sampling model to check my cross validation score. While hyper tuning my code for the random forest I had to change my grid for parameter from {
+    'classifier__n_estimators': [100, 200, 300],
+    'classifier__max_depth': [None, 10, 20, 30],
+    'classifier__min_samples_split': [2, 5, 10],
+    'classifier__min_samples_leaf': [1, 2, 4]
+} to param_grid = {
+    'classifier__n_estimators': [100, 200],
+    'classifier__max_depth': [10, 20],
+    'classifier__min_samples_split': [2, 5],
+    'classifier__min_samples_leaf': [1, 2]
+} as it was taking rhe code was taking a lot fo time to run. I also had to reduce the cross validation (cv) from 5 to 3 as the code was taking too long to be executed. I got a type error issue as my target names contained non string values hence I had to covert the classes to string values.
 
-Machine learning, a subset of AI, has become increasingly popular. It's not just a buzzword; it's revolutionizing how we approach problem-solving. Deep learning, a part of machine learning, mimics the human brain's neural networks.
+I wrote code to perform K-means clustering on a dataset. I preprocessed the data by scaling numerical features and encoding categorical variables. Then I applied K-means clustering to assign cluster labels.
+I visualized the results using a scatter plot of selected features. To find the optimal number of clusters, I used the Elbow method and silhouette scores, plotting these metrics.
+Finally, I printed the cluster centroids and analyzed each cluster's characteristics, including the rate of heart attacks. This helped me understand patterns and relationships in the data.
+My initial code handled data preprocessing, clustering, evaluation, and analysis. However, there were opportunities to improve efficiency and performance.
+To address this, I made several changes:
 
-The internet, another technological marvel, has transformed communication. It's hard to imagine a world without email, social media, or instant messaging. The World Wide Web, invented by Tim Berners-Lee in 1989, laid the foundation for the internet as we know it today.
+I switched from KMeans to MiniBatchKMeans to speed up clustering for my large dataset (150 MB+).
+I added PCA for dimensionality reduction, setting n_components=10. This can improve speed and clustering performance.
+I reduced the range of clusters tested in the Elbow method to range(2, 6), focusing on a practical range and reducing computation time.
 
-Cybersecurity is a critical concern in our interconnected world. Hackers and cyber-criminals pose significant threats to individuals and organizations alike. Two-factor authentication, encryption, and firewalls are some tools used to combat these threats.
-
-Climate change is another pressing issue of our time. The Earth's average temperature has increased by 1.1°C since the pre-industrial era. This might seem small, but it's causing drastic changes in weather patterns, sea levels, and ecosystems.
-
-Renewable energy sources like solar, wind, and hydroelectric power are key to combating climate change. The cost of solar panels has dropped by 89% since 2010, making this clean energy source more accessible.
-
-In the realm of biology, CRISPR-Cas9 gene-editing technology is opening up new possibilities. It's being used to treat genetic disorders, develop hardier crops, and even bring extinct species back to life (de-extinction).
-
-Quantum computing is another frontier of technology. Unlike classical computers that use bits (0 or 1), quantum computers use qubits, which can exist in multiple states simultaneously. This could revolutionize fields like cryptography and drug discovery.
-
-Last but not least, space exploration continues to captivate our imagination. SpaceX's reusable rockets have significantly reduced the cost of space launches. NASA's Artemis program aims to return humans to the Moon by 2024, paving the way for future Mars missions.
-
-This text covers a wide range of topics, from AI and the internet to climate change and space exploration. It's designed to give your text analysis program a thorough workout!
+These changes aimed to make the clustering process more efficient while still allowing for effective evaluation and visualization of the results.
