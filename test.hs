@@ -60,7 +60,7 @@ formatFreqMap freqMap = unlines $
 main :: IO ()
 main = do
     -- Read input file with error handling
-    inputResult <- try (readFile "/Users/moiz/Desktop/Functional-Programming/Functional-Programming/example.txt") :: IO (Either IOException String)
+    inputResult <- try (readFile "/Users/moiz/Desktop/FP-assignment/example.txt") :: IO (Either IOException String)
     case inputResult of
         Left err -> putStrLn $ "Error reading input file: " ++ show err
         Right content -> do
@@ -69,8 +69,8 @@ main = do
                 indexOutput = formatIndexMap indexMap
                 freqOutput = formatFreqMap freqMap
             -- Define the output paths
-            let indexPath = "/Users/moiz/Desktop/Functional-Programming/Functional-Programming/index.txt"
-            let freqPath = "/Users/moiz/Desktop/Functional-Programming/Functional-Programming/frequency.txt"
+            let indexPath = "/Users/moiz/Desktop/FP-assignment/index.txt"
+            let freqPath = "/Users/moiz/Desktop/FP-assignment/frequency.txt"
             -- Write index.txt with error handling
             indexResult <- try (writeFile indexPath indexOutput) :: IO (Either IOException ())
             case indexResult of
